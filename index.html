@@ -94,8 +94,211 @@ const tools=[
 {id:"notes",icon:"📝",name:"notes",desc:"notesDesc"},{id:"words",icon:"🔢",name:"wordCounter",desc:"wordDesc"},
 {id:"case",icon:"🔠",name:"caseConverter",desc:"caseDesc"},{id:"typing",icon:"⌨️",name:"typingTest",desc:"typingDesc"},
 {id:"marks",icon:"🎓",name:"marksCalc",desc:"marksDesc"},{id:"random",icon:"🎲",name:"randomNum",desc:"randomDesc"},
-{id:"password",icon:"🔐",name:"passwordGen",desc:"passwordDesc"}
-];
+{id:"password",icon:"🔐",name:"passwordGen",desc:"passwordDesc"},
+{id:"tip",icon:"\ud83d\udcb8",name:"Tip Calculator",desc:"Calculate tip and split a bill"},
+{id:"discount",icon:"\ud83c\udff7\ufe0f",name:"Discount Calculator",desc:"Sale price and savings"},
+{id:"profit",icon:"\ud83d\udcc8",name:"Profit & Loss Calculator",desc:"Profit, loss and margin"},
+{id:"simpleinterest",icon:"\ud83d\udcb0",name:"Simple Interest Calculator",desc:"Interest and maturity amount"},
+{id:"compoundinterest",icon:"\ud83c\udfe6",name:"Compound Interest Calculator",desc:"Estimate compound growth"},
+{id:"fuel",icon:"\u26fd",name:"Fuel Cost Calculator",desc:"Trip fuel and cost estimate"},
+{id:"speed",icon:"\ud83d\ude97",name:"Speed Distance Time",desc:"Calculate speed, distance or time"},
+{id:"dateDiff",icon:"\ud83d\udcc5",name:"Date Difference",desc:"Days between two dates"},
+{id:"addDays",icon:"\ud83d\uddd3\ufe0f",name:"Add or Subtract Days",desc:"Find a date after/before days"},
+{id:"leap",icon:"\ud83c\udf0d",name:"Leap Year Checker",desc:"Check leap years"},
+{id:"prime",icon:"\ud83d\udd22",name:"Prime Number Checker",desc:"Check if a number is prime"},
+{id:"factorial",icon:"\u2797",name:"Factorial Calculator",desc:"Calculate factorial"},
+{id:"gcdlcm",icon:"\ud83e\uddee",name:"GCD & LCM Calculator",desc:"Find greatest common divisor and least common multiple"},
+{id:"average",icon:"\ud83d\udcca",name:"Average Calculator",desc:"Mean of a list of numbers"},
+{id:"median",icon:"\ud83d\udcc9",name:"Median Calculator",desc:"Find the middle value"},
+{id:"randomList",icon:"\ud83c\udfb2",name:"Random Number List",desc:"Generate multiple random numbers"},
+{id:"numberWords",icon:"\ud83d\udd24",name:"Number to Words",desc:"Convert number to English words"},
+{id:"roman",icon:"\ud83c\udfdb\ufe0f",name:"Roman Numeral Converter",desc:"Number to Roman numerals and back"},
+{id:"baseConvert",icon:"\ud83d\udcbb",name:"Number Base Converter",desc:"Binary, decimal, hexadecimal"},
+{id:"reverseText",icon:"\u2194\ufe0f",name:"Reverse Text",desc:"Reverse characters or words"},
+{id:"removeDuplicates",icon:"\ud83e\uddf9",name:"Remove Duplicate Lines",desc:"Clean repeated lines"},
+{id:"sortLines",icon:"\u2195\ufe0f",name:"Sort Lines",desc:"Sort text lines A\u2013Z or Z\u2013A"},
+{id:"lineCounter",icon:"\ud83d\udcc3",name:"Line Counter",desc:"Count lines and non-empty lines"},
+{id:"slug",icon:"\ud83d\udd17",name:"URL Slug Generator",desc:"Create URL-friendly slugs"},
+{id:"urlEncode",icon:"\ud83c\udf10",name:"URL Encoder / Decoder",desc:"Encode or decode URL text"},
+{id:"jsonFormat",icon:"{ }",name:"JSON Formatter",desc:"Format and validate JSON"},
+{id:"htmlEscape",icon:"\ud83d\udee1\ufe0f",name:"HTML Escape Tool",desc:"Escape or unescape HTML characters"},
+{id:"regex",icon:"\ud83d\udd0d",name:"Regex Tester",desc:"Test a regular expression"},
+{id:"uuid",icon:"\ud83c\udd94",name:"UUID Generator",desc:"Generate a random UUID"},
+{id:"passwordStrength",icon:"\ud83d\udd10",name:"Password Strength Checker",desc:"Check password length and variety"},
+{id:"colorHex",icon:"\ud83c\udfa8",name:"HEX / RGB Converter",desc:"Convert HEX and RGB colors"},
+{id:"contrast",icon:"\ud83d\udc41\ufe0f",name:"Color Contrast Checker",desc:"Check text/background contrast"},
+{id:"aspect",icon:"\ud83d\uddbc\ufe0f",name:"Aspect Ratio Calculator",desc:"Find image or video aspect ratio"},
+{id:"loanCompare",icon:"\ud83c\udfe0",name:"Loan Comparison Calculator",desc:"Compare two monthly payments"},
+{id:"salaryHourly",icon:"\ud83d\udcbc",name:"Salary to Hourly Calculator",desc:"Estimate hourly wage"},
+{id:"electricity",icon:"\u26a1",name:"Electricity Cost Calculator",desc:"Estimate appliance running cost"},
+{id:"calorieWater",icon:"\ud83d\udca7",name:"Daily Water Estimate",desc:"Simple daily water estimate"},
+{id:"pace",icon:"\ud83c\udfc3",name:"Running Pace Calculator",desc:"Pace and finish time"},
+{id:"dataSize",icon:"\ud83d\udcbe",name:"Data Size Converter",desc:"Convert bytes, KB, MB and GB"},
+{id:"timeConvert",icon:"\u23f1\ufe0f",name:"Time Converter",desc:"Convert seconds, minutes and hours"},
+{id:"temperature",icon:"\ud83c\udf21\ufe0f",name:"Temperature Converter",desc:"Convert Celsius, Fahrenheit and Kelvin"},
+{id:"lengthConvert",icon:"\ud83d\udccf",name:"Length Converter",desc:"Convert common length units"},
+{id:"weightConvert",icon:"\u2696\ufe0f",name:"Weight Converter",desc:"Convert common weight units"},
+{id:"areaConvert",icon:"\ud83d\udcd0",name:"Area Converter",desc:"Convert square metres and acres"},
+{id:"volumeConvert",icon:"\ud83e\uddea",name:"Volume Converter",desc:"Convert litres and millilitres"},
+{id:"romanDate",icon:"\ud83d\uddd3\ufe0f",name:"Day of Week Finder",desc:"Find weekday for a date"},
+{id:"countdown",icon:"\u23f3",name:"Days Until Date",desc:"Count days to a future date"},
+{id:"csvJson",icon:"\ud83d\udcd1",name:"CSV to JSON Converter",desc:"Convert simple CSV text to JSON"},
+{id:"jsonCsv",icon:"\ud83d\udccb",name:"JSON to CSV Converter",desc:"Convert JSON records to CSV"},
+{id:"textClean",icon:"\ud83e\uddfd",name:"Text Cleaner",desc:"Trim spaces and blank lines"},
+{id:"findReplace",icon:"\ud83d\udd01",name:"Find and Replace Text",desc:"Replace text in a passage"},
+{id:"charFrequency",icon:"\ud83d\udcca",name:"Character Frequency",desc:"Count each character"},
+{id:"initials",icon:"\ud83d\udd20",name:"Initials Generator",desc:"Create initials from a name"},
+{id:"emailExtract",icon:"\u2709\ufe0f",name:"Email Extractor",desc:"Find email addresses in text"},
+{id:"phoneExtract",icon:"\ud83d\udcf1",name:"Phone Number Extractor",desc:"Find phone-like numbers in text"},
+{id:"lorem",icon:"\ud83d\udcdd",name:"Lorem Ipsum Generator",desc:"Generate placeholder text"},
+{id:"imageCompress",icon:"\ud83d\uddbc\ufe0f",name:"Image Compressor",desc:"Resize and compress an image in browser"},
+{id:"imageGrayscale",icon:"\ud83c\udf11",name:"Image Grayscale Tool",desc:"Turn an image grayscale in browser"},
+{id:"imageRotate",icon:"\ud83d\udd04",name:"Image Rotate Tool",desc:"Rotate an image in browser"}];
+
+const extraToolIds = ["tip", "discount", "profit", "simpleinterest", "compoundinterest", "fuel", "speed", "dateDiff", "addDays", "leap", "prime", "factorial", "gcdlcm", "average", "median", "randomList", "numberWords", "roman", "baseConvert", "reverseText", "removeDuplicates", "sortLines", "lineCounter", "slug", "urlEncode", "jsonFormat", "htmlEscape", "regex", "uuid", "passwordStrength", "colorHex", "contrast", "aspect", "loanCompare", "salaryHourly", "electricity", "calorieWater", "pace", "dataSize", "timeConvert", "temperature", "lengthConvert", "weightConvert", "areaConvert", "volumeConvert", "romanDate", "countdown", "csvJson", "jsonCsv", "textClean", "findReplace", "charFrequency", "initials", "emailExtract", "phoneExtract", "lorem", "imageCompress", "imageGrayscale", "imageRotate"];
+function extraMarkup(id){
+ const f=(id,label,type="number",ph="")=>`<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${ph}"></div>`;
+ const ta=(id,label,ph="Enter text...")=>`<div class="field"><label for="${id}">${label}</label><textarea id="${id}" rows="6" placeholder="${ph}"></textarea></div>`;
+ const go=`<button class="btn" id="extraGo">Calculate / Convert</button><div class="result" id="extraResult" aria-live="polite"></div>`;
+ const fields={
+ tip:f("a","Bill amount (₹)")+f("b","Tip (%)")+f("c","Number of people"),
+ discount:f("a","Original price (₹)")+f("b","Discount (%)"),
+ profit:f("a","Cost price (₹)")+f("b","Selling price (₹)"),
+ simpleinterest:f("a","Principal (₹)")+f("b","Annual rate (%)")+f("c","Time (years)"),
+ compoundinterest:f("a","Principal (₹)")+f("b","Annual rate (%)")+f("c","Years")+f("d","Compounding periods/year"),
+ fuel:f("a","Distance (km)")+f("b","Fuel efficiency (km/l)")+f("c","Fuel price (₹/l)"),
+ speed:f("a","Distance (km)")+f("b","Time (hours)"),
+ dateDiff:f("a","Start date","date")+f("b","End date","date"),
+ addDays:f("a","Starting date","date")+f("b","Days to add (use negative to subtract)"),
+ leap:f("a","Year"),
+ prime:f("a","Whole number"),
+ factorial:f("a","Whole number (0–170)"),
+ gcdlcm:f("a","First integer")+f("b","Second integer"),
+ average:ta("text","Numbers (comma or space separated)","10, 20, 30"),
+ median:ta("text","Numbers (comma or space separated)","10, 20, 30"),
+ randomList:f("a","Minimum")+f("b","Maximum")+f("c","How many (max 100)"),
+ numberWords:f("a","Number (0–999999999)"),
+ roman:f("a","Number (1–3999) or Roman numeral","text","2026 or XIV"),
+ baseConvert:f("a","Number to convert","text","1010")+`<div class="field"><label for="b">From base</label><select id="b"><option>2</option><option selected>10</option><option>8</option><option>16</option></select></div><div class="field"><label for="c">To base</label><select id="c"><option>2</option><option selected>10</option><option>8</option><option>16</option></select></div>`,
+ reverseText:ta("text","Text to reverse"),
+ removeDuplicates:ta("text","Lines"),
+ sortLines:ta("text","Lines to sort")+`<div class="field"><label for="a">Order</label><select id="a"><option value="asc">A to Z</option><option value="desc">Z to A</option></select></div>`,
+ lineCounter:ta("text","Text"),
+ slug:ta("text","Text to turn into a slug"),
+ urlEncode:ta("text","Text or encoded URL"),
+ jsonFormat:ta("text","JSON text"),
+ htmlEscape:ta("text","Text or HTML entities"),
+ regex:ta("text","Text to test")+f("a","Regular expression","text","e.g. \\d+")+`<div class="field"><label for="b">Flags (optional)</label><input id="b" type="text" value="g"></div>`,
+ uuid:`<p>Generate a fresh random UUID.</p>`,
+ passwordStrength:f("a","Password to check","password"),
+ colorHex:f("a","HEX color","text","#2457e6"),
+ contrast:f("a","Text color HEX","text","#000000")+f("b","Background color HEX","text","#ffffff"),
+ aspect:f("a","Width")+f("b","Height"),
+ loanCompare:f("a","Loan amount (₹)")+f("b","Annual rate (%)")+f("c","Months")+f("d","Second loan amount (₹)")+f("e","Second annual rate (%)")+f("f","Second months"),
+ salaryHourly:f("a","Annual salary (₹)")+f("b","Hours per week")+f("c","Weeks per year"),
+ electricity:f("a","Appliance power (watts)")+f("b","Hours used per day")+f("c","Days")+f("d","Rate per kWh (₹)"),
+ calorieWater:f("a","Weight (kg)"),
+ pace:f("a","Distance (km)")+f("b","Time (minutes)"),
+ dataSize:f("a","Value")+`<div class="field"><label for="b">From unit</label><select id="b">${["Bytes","KB","MB","GB","TB"].map(x=>`<option>${x}</option>`).join("")}</select></div><div class="field"><label for="c">To unit</label><select id="c">${["Bytes","KB","MB","GB","TB"].map(x=>`<option>${x}</option>`).join("")}</select></div>`,
+ timeConvert:f("a","Value")+`<div class="field"><label for="b">From</label><select id="b"><option>Seconds</option><option>Minutes</option><option>Hours</option><option>Days</option></select></div><div class="field"><label for="c">To</label><select id="c"><option>Seconds</option><option>Minutes</option><option>Hours</option><option>Days</option></select></div>`,
+ temperature:f("a","Value")+`<div class="field"><label for="b">From</label><select id="b"><option>Celsius</option><option>Fahrenheit</option><option>Kelvin</option></select></div><div class="field"><label for="c">To</label><select id="c"><option>Celsius</option><option>Fahrenheit</option><option>Kelvin</option></select></div>`,
+ lengthConvert:f("a","Value")+`<div class="field"><label for="b">From</label><select id="b">${["mm","cm","m","km","inch","foot","mile"].map(x=>`<option>${x}</option>`).join("")}</select></div><div class="field"><label for="c">To</label><select id="c">${["mm","cm","m","km","inch","foot","mile"].map(x=>`<option>${x}</option>`).join("")}</select></div>`,
+ weightConvert:f("a","Value")+`<div class="field"><label for="b">From</label><select id="b">${["mg","g","kg","tonne","oz","lb"].map(x=>`<option>${x}</option>`).join("")}</select></div><div class="field"><label for="c">To</label><select id="c">${["mg","g","kg","tonne","oz","lb"].map(x=>`<option>${x}</option>`).join("")}</select></div>`,
+ areaConvert:f("a","Value")+`<div class="field"><label for="b">From</label><select id="b">${["m²","km²","cm²","hectare","acre","ft²"].map(x=>`<option>${x}</option>`).join("")}</select></div><div class="field"><label for="c">To</label><select id="c">${["m²","km²","cm²","hectare","acre","ft²"].map(x=>`<option>${x}</option>`).join("")}</select></div>`,
+ volumeConvert:f("a","Value")+`<div class="field"><label for="b">From</label><select id="b">${["mL","L","m³","US gallon"].map(x=>`<option>${x}</option>`).join("")}</select></div><div class="field"><label for="c">To</label><select id="c">${["mL","L","m³","US gallon"].map(x=>`<option>${x}</option>`).join("")}</select></div>`,
+ romanDate:f("a","Date","date"),
+ countdown:f("a","Target date","date"),
+ csvJson:ta("text","CSV text (first row = headings)"),
+ jsonCsv:ta("text","JSON array of objects"),
+ textClean:ta("text","Text to clean"),
+ findReplace:ta("text","Original text")+f("a","Find","text")+f("b","Replace with","text"),
+ charFrequency:ta("text","Text"),
+ initials:f("a","Full name","text","e.g. Akash Kumar"),
+ emailExtract:ta("text","Paste text containing email addresses"),
+ phoneExtract:ta("text","Paste text containing phone numbers"),
+ lorem:f("a","Paragraphs (1–10)"),
+ imageCompress:`<div class="field"><label for="imgFile">Choose image</label><input id="imgFile" type="file" accept="image/*"></div>${f("a","JPEG quality (10–100)")}<p class="note">Image is processed in your browser.</p>`,
+ imageGrayscale:`<div class="field"><label for="imgFile">Choose image</label><input id="imgFile" type="file" accept="image/*"></div>`,
+ imageRotate:`<div class="field"><label for="imgFile">Choose image</label><input id="imgFile" type="file" accept="image/*"></div><div class="field"><label for="a">Rotation</label><select id="a"><option value="90">90°</option><option value="180">180°</option><option value="270">270°</option></select></div>`
+ };
+ return `<div class="fields">${fields[id]||ta("text","Input")}</div>${go}<div id="extraPreview"></div>`;
+}
+function wireExtra(id){
+ const out=$("extraResult"), val=k=>$(k)?.value??"", num=k=>Number(val(k)), show=x=>out.textContent=String(x);
+ const readNums=()=>val("text").trim().split(/[,\s]+/).filter(Boolean).map(Number);
+ const gcd=(a,b)=>b?gcd(b,a%b):Math.abs(a);
+ const romanToInt=s=>{const m={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};let n=0;for(let i=0;i<s.length;i++)n+=(m[s[i]]||0)<(m[s[i+1]]||0)?-(m[s[i]]||0):(m[s[i]]||0);return n};
+ const intToRoman=n=>{let o="";for(const [v,s] of [[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]])while(n>=v){o+=s;n-=v}return o};
+ const units={
+  dataSize:{Bytes:1,KB:1024,MB:1048576,GB:1073741824,TB:1099511627776},
+  timeConvert:{Seconds:1,Minutes:60,Hours:3600,Days:86400},
+  lengthConvert:{mm:.001,cm:.01,m:1,km:1000,inch:.0254,foot:.3048,mile:1609.344},
+  weightConvert:{mg:.000001,g:.001,kg:1,tonne:1000,oz:.028349523125,lb:.45359237},
+  areaConvert:{"m²":1,"km²":1e6,"cm²":.0001,hectare:10000,acre:4046.8564224,"ft²":.09290304},
+  volumeConvert:{mL:.001,L:1,"m³":1000,"US gallon":3.785411784}
+ };
+ const romanN= s=>{s=s.toUpperCase();if(/^\d+$/.test(s)){let n=+s;if(n<1||n>3999)throw Error("Enter 1–3999");return intToRoman(n)}let n=romanToInt(s);if(n<1||n>3999||intToRoman(n)!==s)throw Error("Invalid Roman numeral");return n};
+ $("extraGo").onclick=()=>{
+ try{
+ let n=num("a"),b=num("b"),c=num("c"),d=num("d"),res;
+ switch(id){
+ case"tip":if(n<0||b<0||c<1)throw Error("Enter valid values");res=`Tip: ₹${(n*b/100).toFixed(2)} | Total: ₹${(n*(1+b/100)).toFixed(2)} | Per person: ₹${(n*(1+b/100)/c).toFixed(2)}`;break;
+ case"discount":res=`Savings: ₹${(n*b/100).toFixed(2)} | Sale price: ₹${(n*(1-b/100)).toFixed(2)}`;break;
+ case"profit":res=b>=n?`Profit: ₹${b-n} | Margin: ${b?((b-n)/b*100).toFixed(2):0}%`:`Loss: ₹${n-b} | Loss %: ${n?((n-b)/n*100).toFixed(2):0}%`;break;
+ case"simpleinterest":res=`Interest: ₹${(n*b*c/100).toFixed(2)} | Total: ₹${(n+n*b*c/100).toFixed(2)}`;break;
+ case"compoundinterest":if(d<=0)throw Error("Periods/year must be positive");res=`Interest: ₹${(n*Math.pow(1+b/100/d,d*c)-n).toFixed(2)} | Total: ₹${(n*Math.pow(1+b/100/d,d*c)).toFixed(2)}`;break;
+ case"fuel":if(b<=0)throw Error("Efficiency must be positive");res=`Fuel needed: ${(n/b).toFixed(2)} L | Estimated cost: ₹${(n/b*c).toFixed(2)}`;break;
+ case"speed":if(b<=0)throw Error("Time must be positive");res=`Speed: ${(n/b).toFixed(2)} km/h | Distance: ${(n).toFixed(2)} km | Time: ${(b).toFixed(2)} h`;break;
+ case"dateDiff":{let x=new Date(val("a")+"T00:00:00"),y=new Date(val("b")+"T00:00:00");if(isNaN(+x)||isNaN(+y))throw Error("Choose both dates");res=`Difference: ${Math.round(Math.abs(y-x)/86400000)} days`;break}
+ case"addDays":{let x=new Date(val("a")+"T00:00:00");if(isNaN(+x))throw Error("Choose a date");x.setDate(x.getDate()+n);res=x.toLocaleDateString();break}
+ case"leap":res=(n%4===0&&(n%100!==0||n%400===0))?`${n} is a leap year`:`${n} is not a leap year`;break;
+ case"prime":{if(!Number.isInteger(n)||n<2){res="Not a prime number";break}let p=true;for(let i=2;i<=Math.sqrt(n);i++)if(n%i===0){p=false;break}res=p?"Prime number":"Not a prime number";break}
+ case"factorial":if(!Number.isInteger(n)||n<0||n>170)throw Error("Enter an integer from 0 to 170");{let z=1;for(let i=2;i<=n;i++)z*=i;res=z}break;
+ case"gcdlcm":if(!Number.isInteger(n)||!Number.isInteger(b))throw Error("Enter integers");res=`GCD: ${gcd(n,b)} | LCM: ${n&&b?Math.abs(n*b)/gcd(n,b):0}`;break;
+ case"average":case"median":{let a=readNums();if(!a.length||a.some(x=>!Number.isFinite(x)))throw Error("Enter valid numbers");a.sort((x,y)=>x-y);res=id==="average"?a.reduce((x,y)=>x+y,0)/a.length:(a.length%2?a[(a.length-1)/2]:(a[a.length/2-1]+a[a.length/2])/2);break}
+ case"randomList":if(!Number.isInteger(n)||!Number.isInteger(b)||b<n||!Number.isInteger(c)||c<1||c>100)throw Error("Use valid range and count 1–100");res=Array.from({length:c},()=>Math.floor(Math.random()*(b-n+1))+n).join(", ");break;
+ case"numberWords":{if(!Number.isInteger(n)||n<0||n>999999999)throw Error("Enter 0–999999999");const small=["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"],tens=["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];function words(v){if(v<20)return small[v];if(v<100)return tens[Math.floor(v/10)]+(v%10?" "+small[v%10]:"");if(v<1000)return small[Math.floor(v/100)]+" hundred"+(v%100?" "+words(v%100):"");if(v<1e6)return words(Math.floor(v/1000))+" thousand"+(v%1000?" "+words(v%1000):"");return words(Math.floor(v/1e6))+" million"+(v%1e6?" "+words(v%1e6):"")}res=words(n);break}
+ case"roman":res=romanN(val("a"));break;
+ case"baseConvert":{let x=val("a").trim(),from=+val("b"),to=+val("c"),v=parseInt(x,from);if(!x||!Number.isFinite(v)||v<0)throw Error("Enter a valid non-negative number");res=v.toString(to).toUpperCase();break}
+ case"reverseText":res=val("text").split("").reverse().join("");break;
+ case"removeDuplicates":res=[...new Set(val("text").split(/\r?\n/))].join("\n");break;
+ case"sortLines":res=val("text").split(/\r?\n/).sort((x,y)=>x.localeCompare(y,undefined,{sensitivity:"base"})*(val("a")==="desc"?-1:1)).join("\n");break;
+ case"lineCounter":{let x=val("text");res=`Lines: ${x?x.split(/\r?\n/).length:0} | Non-empty: ${x.split(/\r?\n/).filter(y=>y.trim()).length}`;break}
+ case"slug":res=val("text").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");break;
+ case"urlEncode":{let x=val("text");try{res=/%[0-9a-f]{2}/i.test(x)?decodeURIComponent(x):encodeURIComponent(x)}catch{throw Error("Invalid encoded URL text")}break}
+ case"jsonFormat":res=JSON.stringify(JSON.parse(val("text")),null,2);break;
+ case"htmlEscape":{let x=val("text");res=x.includes("&lt;")?x.replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,"&"):x.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");break}
+ case"regex":{let r=new RegExp(val("a"),val("b"));let matches=[...val("text").matchAll(r)];res=matches.length?`Matches (${matches.length}): `+matches.map(m=>m[0]).join(", "):"No matches";break}
+ case"uuid":res=crypto.randomUUID?crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{let r=Math.random()*16|0;return(c==="x"?r:(r&3|8)).toString(16)});break;
+ case"passwordStrength":{let p=val("a"),score=[p.length>=8,p.length>=12,/[a-z]/.test(p)&&/[A-Z]/.test(p),/\d/.test(p),/[^A-Za-z0-9]/.test(p)].filter(Boolean).length;res=!p?"Enter a password":`${score<=2?"Weak":score<=3?"Fair":score===4?"Good":"Strong"} (${score}/5 checks). Avoid reusing passwords.`;break}
+ case"colorHex":{let x=val("a").trim().replace("#","");if(!/^[0-9a-f]{3}([0-9a-f]{3})?$/i.test(x))throw Error("Enter #RGB or #RRGGBB");if(x.length===3)x=x.split("").map(c=>c+c).join("");res=`HEX: #${x.toUpperCase()} | RGB: ${parseInt(x.slice(0,2),16)}, ${parseInt(x.slice(2,4),16)}, ${parseInt(x.slice(4,6),16)}`;break}
+ case"contrast":{const rgb=x=>{x=x.replace("#","");if(!/^[0-9a-f]{6}$/i.test(x))throw Error("Use 6-digit HEX colors");return [0,2,4].map(i=>parseInt(x.slice(i,i+2),16)/255).map(v=>v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4))};const lum=x=>{let a=rgb(x);return .2126*a[0]+.7152*a[1]+.0722*a[2]};let l1=lum(val("a")),l2=lum(val("b")),ratio=(Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05);res=`Contrast ratio: ${ratio.toFixed(2)}:1 — ${ratio>=7?"AAA pass":ratio>=4.5?"AA pass for normal text":ratio>=3?"Passes large text only":"Low contrast"}`;break}
+ case"aspect":if(n<=0||b<=0)throw Error("Width and height must be positive");{let g=gcd(n,b);res=`Ratio: ${n/g}:${b/g} | Decimal: ${(n/b).toFixed(4)}`};break;
+ case"loanCompare":{const emi=(p,r,m)=>r===0?p/m:p*r/1200*Math.pow(1+r/1200,m)/(Math.pow(1+r/1200,m)-1);if(n<=0||b<0||c<=0||d<=0||num("e")<0||num("f")<=0)throw Error("Enter valid loan details");res=`Loan 1 EMI: ₹${emi(n,b,c).toFixed(2)} | Loan 2 EMI: ₹${emi(d,num("e"),num("f")).toFixed(2)}`;break}
+ case"salaryHourly":if(n<0||b<=0||c<=0)throw Error("Enter valid values");res=`Estimated hourly pay: ₹${(n/(b*c)).toFixed(2)}`;break;
+ case"electricity":if(n<0||b<0||c<0||d<0)throw Error("Enter valid values");res=`Energy: ${(n/1000*b*c).toFixed(2)} kWh | Cost: ₹${(n/1000*b*c*d).toFixed(2)}`;break;
+ case"calorieWater":if(n<=0)throw Error("Enter a positive weight");res=`Rough estimate: ${(n*35/1000).toFixed(2)} litres/day. Needs vary with weather, activity and health.`;break;
+ case"pace":if(n<=0||b<=0)throw Error("Enter positive distance and time");res=`Pace: ${(b/n).toFixed(2)} min/km | Speed: ${(n/(b/60)).toFixed(2)} km/h`;break;
+ case"dataSize":case"timeConvert":case"lengthConvert":case"weightConvert":case"areaConvert":case"volumeConvert":{let u=units[id];let factors=id==="dataSize"?u:id==="timeConvert"?u:id==="lengthConvert"?u:id==="weightConvert"?u:id==="areaConvert"?u:u;res=`${n} ${val("b")} = ${(n*factors[val("b")]/factors[val("c")]).toPrecision(8).replace(/\.?0+$/,"")} ${val("c")}`;break}
+ case"temperature":{let c0=val("b")==="Celsius"?n:val("b")==="Fahrenheit"?(n-32)*5/9:n-273.15;res=`${val("c")}: ${(val("c")==="Celsius"?c0:val("c")==="Fahrenheit"?c0*9/5+32:c0+273.15).toFixed(2)}`;break}
+ case"romanDate":case"countdown":{let x=new Date(val("a")+"T00:00:00");if(isNaN(+x))throw Error("Choose a date");if(id==="romanDate")res=x.toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});else res=`${Math.ceil((x-new Date(new Date().toDateString()))/86400000)} days (negative means past)`;break}
+ case"csvJson":{let lines=val("text").trim().split(/\r?\n/);if(lines.length<2)throw Error("Enter headings and at least one data row");let heads=lines.shift().split(",").map(x=>x.trim());res=JSON.stringify(lines.map(l=>Object.fromEntries(l.split(",").map((v,i)=>[heads[i],v.trim()]))),null,2);break}
+ case"jsonCsv":{let arr=JSON.parse(val("text"));if(!Array.isArray(arr)||!arr.length||typeof arr[0]!=="object")throw Error("Enter a JSON array of objects");let heads=[...new Set(arr.flatMap(o=>Object.keys(o)))],esc=x=>`"${String(x??"").replace(/"/g,'""')}"`;res=[heads.map(esc).join(","),...arr.map(o=>heads.map(k=>esc(o[k])).join(","))].join("\n");break}
+ case"textClean":res=val("text").split(/\r?\n/).map(x=>x.trim().replace(/\s+/g," ")).filter(Boolean).join("\n");break;
+ case"findReplace":res=val("text").split(val("a")).join(val("b"));break;
+ case"charFrequency":{let m={};for(let ch of val("text"))m[ch]=(m[ch]||0)+1;res=Object.entries(m).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${k===" "?"[space]":k==="\\n"?"[newline]":k}: ${v}`).join("\n");break}
+ case"initials":res=val("a").trim().split(/\s+/).filter(Boolean).map(x=>x[0].toUpperCase()).join("");break;
+ case"emailExtract":res=[...new Set(val("text").match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi)||[])].join("\n")||"No emails found";break;
+ case"phoneExtract":res=[...new Set(val("text").match(/(?:\+?\d[\d\s().-]{7,}\d)/g)||[])].join("\n")||"No phone-like numbers found";break;
+ case"lorem":{let p=Math.max(1,Math.min(10,Math.floor(n||1))),sentence="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";res=Array.from({length:p},()=>sentence).join("\n\n");break}
+ case"imageCompress":case"imageGrayscale":case"imageRotate":{let file=$("imgFile").files[0];if(!file)throw Error("Choose an image first");let img=new Image(),url=URL.createObjectURL(file);img.onload=()=>{let canvas=document.createElement("canvas"),ctx=canvas.getContext("2d"),rot=id==="imageRotate"?num("a"):0;canvas.width=rot%180?img.height:img.width;canvas.height=rot%180?img.width:img.height;ctx.save();ctx.translate(canvas.width/2,canvas.height/2);ctx.rotate(rot*Math.PI/180);if(id==="imageGrayscale")ctx.filter="grayscale(1)";ctx.drawImage(img,-img.width/2,-img.height/2);ctx.restore();canvas.toBlob(blob=>{if(!blob){show("Could not process image");return}let link=document.createElement("a");link.href=URL.createObjectURL(blob);link.download=id==="imageCompress"?"compressed-image.jpg":"edited-image.png";link.click();show(`Done. Original: ${(file.size/1024).toFixed(1)} KB; output: ${(blob.size/1024).toFixed(1)} KB. Download started.`);URL.revokeObjectURL(url)},id==="imageCompress"?"image/jpeg":"image/png",id==="imageCompress"?Math.max(.1,Math.min(1,(num("a")||80)/100)):.92)};img.onerror=()=>{show("Could not open image")};img.src=url;return}
+ }
+ if(typeof res==="number"&&Number.isFinite(res))res=Number(res.toFixed(8));
+ show(res);
+ }catch(e){show("Error: "+(e.message||"Please check the input"))}
+ };
+}
+
 let lang="hi",typingTimer=null,typingStarted=0,typingDuration=60;
 const $=id=>document.getElementById(id);
 function t(key){return (translations[lang]&&translations[lang][key])||translations.en[key]||translations.hi[key]||key}
@@ -125,7 +328,7 @@ case"typing":return `<p id="typingSample" class="panel">${t("sampleText")} ${t("
 case"marks":return `<div id="subjects"></div><div class="actions">${btn(t("addSubject"),"addSubject","secondary")}${btn(t("calculate"),"marksGo")}</div>${result()}`;
 case"random":return `<div class="fields">${field("randomMin",t("randomMin"))}${field("randomMax",t("randomMax"))}</div>${btn(t("generate"),"randomGo")}${result()}`;
 case"password":return `<div class="fields">${field("passLength",t("length"))}</div><div class="fields"><label><input id="passUpper" type="checkbox" checked> ${t("uppercase")}</label><label><input id="passNumbers" type="checkbox" checked> ${t("numbers")}</label><label><input id="passSymbols" type="checkbox"> ${t("symbols")}</label></div><div class="actions">${btn(t("generate"),"passGo")}${btn(t("copy"),"passCopy","secondary")}</div>${result()}`;
-default:return `<p>${t("invalid")}</p>`}}
+default:if(extraToolIds.includes(id))return extraMarkup(id);return `<p>${t("invalid")}</p>`}}
 function wireTool(id){
 if(id==="basic"){let expr="";const display=$("calcDisplay");document.querySelectorAll("[data-key]").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.key;if(k==="C")expr="";else if(k==="="){try{const safe=expr.replace(/×/g,"*").replace(/÷/g,"/").replace(/−/g,"-");if(!/^[0-9+\-*/().%\s]+$/.test(safe))throw 0;const value=Function('"use strict";return ('+safe.replace(/(\d+(?:\.\d+)?)%/g,"($1/100)")+')')();if(!Number.isFinite(value))throw 0;expr=String(value)}catch{expr="" ;$("result").textContent=t("invalid")}}else if(k==="√"){try{expr=String(Math.sqrt(Number(expr)))}catch{expr=""}}else expr+=k;display.textContent=expr||"0"}));}
 if(id==="scientific")$("sciGo").onclick=()=>{try{let s=$("sciExpr").value.toLowerCase().replace(/\s/g,"");s=s.replace(/\^/g,"**").replace(/\bsqrt\(/g,"Math.sqrt(").replace(/\bsin\(/g,"Math.sin(Math.PI/180*").replace(/\bcos\(/g,"Math.cos(Math.PI/180*").replace(/\btan\(/g,"Math.tan(Math.PI/180*").replace(/\blog\(/g,"Math.log10(").replace(/\bln\(/g,"Math.log(");if(!/^[0-9+\-*/().,MathsqrtincosatgloPIe]+$/.test(s))throw 0;const v=Function('"use strict";return ('+s+')')();if(!Number.isFinite(v))throw 0;$("result").textContent=t("result")+": "+v}catch{$("result").textContent=t("invalid")}};
@@ -142,6 +345,7 @@ if(id==="typing"){ $("typingInput").value="";$("typingStart").onclick=()=>{clear
 if(id==="marks"){let count=0;function add(){count++;const d=document.createElement("div");d.className="fields";d.style.marginBottom="10px";d.innerHTML=`<div class="field"><label>${t("subjectName")}</label><input class="subName" placeholder="${t("subject")} ${count}"></div><div class="field"><label>${t("marks")}</label><input class="subMarks" type="number" min="0" step="any"></div><div class="field"><label>${t("maxMarks")}</label><input class="subMax" type="number" min="0" step="any" value="100"></div>`;$("subjects").appendChild(d)}$("addSubject").onclick=add;$("marksGo").onclick=()=>{const ms=[...document.querySelectorAll(".subMarks")],mx=[...document.querySelectorAll(".subMax")];if(!ms.length){$("result").textContent=t("noSubjects");return}let got=0,max=0;for(let i=0;i<ms.length;i++){if(ms[i].value===""||+mx[i].value<=0||+ms[i].value<0||+ms[i].value>+mx[i].value){$("result").textContent=t("invalid");return}got+=+ms[i].value;max+=+mx[i].value}$("result").textContent=`${t("totalMarks")}: ${got}/${max} | ${t("percentageLabel")}: ${(got/max*100).toFixed(2)}% | ${t("average")}: ${(got/ms.length).toFixed(2)}`};add()}
 if(id==="random")$("randomGo").onclick=()=>{const a=$("randomMin").value,b=$("randomMax").value;if(a===""||b===""||+b<+a){$("result").textContent=t("invalid");return}$("result").textContent=String(Math.floor(Math.random()*(+b-+a+1)) + +a)};
 if(id==="password"){let generated="";$("passGo").onclick=()=>{let chars="abcdefghijklmnopqrstuvwxyz";if($("passUpper").checked)chars+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";if($("passNumbers").checked)chars+="0123456789";if($("passSymbols").checked)chars+="!@#$%^&*()-_=+[]{}";const len=Math.max(4,Math.min(128,parseInt($("passLength").value,10)||16));if(chars.length===0){$("result").textContent=t("weakPassword");return}const bytes=new Uint32Array(len);if(window.crypto&&crypto.getRandomValues)crypto.getRandomValues(bytes);else for(let i=0;i<len;i++)bytes[i]=Math.floor(Math.random()*4294967296);generated=Array.from(bytes,n=>chars[n%chars.length]).join("");$("result").textContent=generated};$("passCopy").onclick=()=>copyText(generated)}
+if(extraToolIds.includes(id))wireExtra(id);
 }
 function updateTextStats(){const el=$("wordText");if(!el)return;const s=el.value;const words=s.trim()?s.trim().split(/\s+/u).length:0;const chars=[...s].length;const sentences=s.trim()?(s.match(/[.!?।]+/g)||[]).length:0;$("wordStats").textContent=`${t("words")}: ${words} | ${t("chars")}: ${chars} | ${t("sentences")}: ${sentences}`}
 function finishTyping(){if(typingTimer){clearInterval(typingTimer);typingTimer=null}const input=$("typingInput");if(!input)return;input.disabled=true;const elapsed=Math.max(1,(Date.now()-typingStarted)/60000);const typed=input.value.trim();const words=typed?typed.split(/\s+/u).length:0;const sample=$("typingSample").textContent;const expected=sample.slice(0,typed.length);let correct=0;for(let i=0;i<typed.length;i++)if(typed[i]===expected[i])correct++;$("typingResult").textContent=`${t("wpm")}: ${Math.round(words/elapsed)} | ${t("accuracy")}: ${typed.length?Math.round(correct/typed.length*100):0}%`;}
