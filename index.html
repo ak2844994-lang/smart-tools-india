@@ -1,177 +1,153 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Smart Tools India पर मुफ्त ऑनलाइन कैलकुलेटर, प्रतिशत कैलकुलेटर और टेक्स्ट टूल इस्तेमाल करें।">
-  <title>Smart Tools India - Free Online Tools</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f6fb;
-      color: #182235;
-    }
-    header {
-      background: #155eef;
-      color: white;
-      padding: 25px 15px;
-      text-align: center;
-    }
-    header h1 { margin: 0 0 8px; }
-    nav {
-      background: #1048bd;
-      padding: 12px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    main {
-      max-width: 900px;
-      margin: 25px auto;
-      padding: 0 14px;
-    }
-    .tool {
-      background: white;
-      padding: 20px;
-      margin-bottom: 18px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px #0000000d;
-    }
-    input, textarea, button {
-      width: 100%;
-      padding: 12px;
-      margin: 7px 0;
-      border: 1px solid #ccd4e0;
-      border-radius: 7px;
-      font-size: 16px;
-    }
-    button {
-      background: #155eef;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover { background: #1048bd; }
-    .result { font-weight: bold; color: #087443; }
-    footer {
-      text-align: center;
-      background: #182235;
-      color: white;
-      padding: 22px;
-      margin-top: 35px;
-    }
-    footer a { color: white; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Smart Tools India - Free online calculators, text tools and study tools in multiple languages.">
+<meta name="theme-color" content="#2457e6">
+<title>Smart Tools India | Free Online Tools</title>
+<style>
+:root{--blue:#2457e6;--blue2:#173db0;--bg:#f4f7fc;--card:#fff;--text:#172033;--muted:#64748b;--line:#dce4f0;--green:#087443;--shadow:0 8px 24px #20365c12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}
+header{background:linear-gradient(135deg,#1744c5,#3878ff);color:white;padding:18px max(16px,calc((100% - 1100px)/2)) 30px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-size:1.3rem;font-weight:800;letter-spacing:.2px}.language{border:0;border-radius:10px;padding:9px 12px;background:#fff;color:#15234a;max-width:190px}
+.hero{text-align:center;padding:28px 0 12px}.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);margin:0 0 8px}.hero p{margin:0 auto 18px;max-width:650px;color:#e7edff}
+.search{display:block;width:min(100%,620px);margin:auto;border:0;border-radius:12px;padding:14px 16px;background:white;color:#172033;box-shadow:var(--shadow)}
+main{max-width:1100px;margin:24px auto;padding:0 15px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:24px 0 14px}.section-head h2{margin:0;font-size:1.35rem}.muted{color:var(--muted);font-size:.93rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:13px}.tool-card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:17px 14px;text-align:left;box-shadow:0 2px 8px #1d35570a;min-height:126px;color:var(--text);transition:transform .15s,border-color .15s}.tool-card:hover{transform:translateY(-2px);border-color:#8ba7ff}.tool-icon{font-size:1.7rem;display:block;margin-bottom:9px}.tool-name{display:block;font-weight:750}.tool-desc{display:block;color:var(--muted);font-size:.85rem;margin-top:4px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,4vw,25px);box-shadow:var(--shadow);margin:20px 0}.panel h2{margin:0 0 6px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:16px}.back{border:1px solid var(--line);background:#f8faff;color:#203b83;border-radius:9px;padding:9px 13px}.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-weight:650;font-size:.92rem}.field input,.field select,.field textarea, .full-input{width:100%;min-width:0;padding:12px;border:1px solid #cbd5e1;border-radius:9px;background:white;color:#172033}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.btn{border:0;border-radius:9px;padding:11px 15px;background:var(--blue);color:white;font-weight:650}.btn.secondary{background:#eaf0ff;color:#1e40af}.btn.danger{background:#fff0f0;color:#a32020}.result{margin-top:15px;padding:13px;border-radius:10px;background:#effaf4;color:var(--green);font-weight:700;overflow-wrap:anywhere;white-space:pre-wrap}.result:empty{display:none}.calculator-display{font-size:1.8rem;text-align:right;background:#f8faff;border:1px solid var(--line);padding:14px;border-radius:10px;min-height:65px;overflow-wrap:anywhere;margin-bottom:10px}.calc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.calc-grid button{border:1px solid var(--line);border-radius:9px;background:#f6f8fd;padding:13px 5px;font-weight:700}.calc-grid button.equals{background:var(--blue);color:white}.calc-grid button.clear{background:#fff0f0;color:#a32020}
+footer{margin-top:40px;background:#121d35;color:#e6ebf6;padding:28px 16px;text-align:center}footer p{margin:6px}.footer-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:12px}.footer-links a{color:#e6ebf6}
+.hidden{display:none!important}.note{font-size:.88rem;color:var(--muted)}.status{margin-top:8px;color:var(--muted);font-size:.9rem}
+@media(max-width:480px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tool-card{padding:14px 11px}.topbar{align-items:flex-start}.language{max-width:160px}.calc-grid button{padding:12px 3px}}
+</style>
 </head>
 <body>
-
 <header>
-  <h1>Smart Tools India</h1>
-  <p>आपके सभी जरूरी ऑनलाइन टूल्स — बिल्कुल मुफ्त!</p>
+  <div class="topbar">
+    <div class="brand">⚡ Smart Tools India</div>
+    <select class="language" id="language" aria-label="Choose language">
+      <option value="hi">🇮🇳 हिंदी</option><option value="en">🇬🇧 English</option>
+      <option value="bn">বাংলা</option><option value="ur">اردو</option>
+      <option value="ne">नेपाली</option><option value="es">Español</option>
+      <option value="fr">Français</option><option value="ar">العربية</option>
+      <option value="pt">Português</option><option value="id">Bahasa Indonesia</option>
+    </select>
+  </div>
+  <div class="hero">
+    <h1 data-i18n="heroTitle">सभी उपयोगी टूल्स, एक ही जगह</h1>
+    <p data-i18n="heroSub">मुफ्त ऑनलाइन कैलकुलेटर, टेक्स्ट टूल्स और स्टडी टूल्स इस्तेमाल करें।</p>
+    <input class="search" id="search" type="search" data-placeholder="searchPlaceholder" placeholder="टूल खोजें...">
+  </div>
 </header>
 
-<nav>
-  <a href="#calculator">कैलकुलेटर</a>
-  <a href="#percentage">प्रतिशत</a>
-  <a href="#texttool">टेक्स्ट टूल</a>
-  <a href="#about">हमारे बारे में</a>
-</nav>
-
 <main>
-  <section class="tool" id="calculator">
-    <h2>🧮 सामान्य कैलकुलेटर</h2>
-    <input id="num1" type="number" placeholder="पहली संख्या">
-    <input id="num2" type="number" placeholder="दूसरी संख्या">
-    <button onclick="calculate('+')">जोड़ (+)</button>
-    <button onclick="calculate('-')">घटाव (−)</button>
-    <button onclick="calculate('*')">गुणा (×)</button>
-    <button onclick="calculate('/')">भाग (÷)</button>
-    <p class="result" id="calcResult">उत्तर यहाँ दिखाई देगा।</p>
+  <section id="home">
+    <div class="section-head"><h2 data-i18n="allTools">सभी टूल्स</h2><span class="muted" id="toolCount">15 tools</span></div>
+    <div class="grid" id="toolGrid"></div>
+    <p class="muted hidden" id="noResults" data-i18n="noResults">कोई टूल नहीं मिला। दूसरा शब्द खोजें।</p>
   </section>
-
-  <section class="tool" id="percentage">
-    <h2>📊 प्रतिशत कैलकुलेटर</h2>
-    <input id="part" type="number" placeholder="प्राप्त अंक">
-    <input id="total" type="number" placeholder="कुल अंक">
-    <button onclick="percentage()">प्रतिशत निकालें</button>
-    <p class="result" id="percentResult"></p>
+  <section id="toolView" class="hidden" aria-live="polite">
+    <div class="panel">
+      <div class="panel-head">
+        <div><h2 id="toolTitle"></h2><div class="muted" id="toolSubtitle"></div></div>
+        <button class="back" id="backBtn" data-i18n="backHome">← होम पर जाएँ</button>
+      </div>
+      <div id="toolContent"></div>
+    </div>
   </section>
-
-  <section class="tool" id="texttool">
-    <h2>📝 टेक्स्ट काउंटर</h2>
-    <textarea id="textInput" rows="5" placeholder="यहाँ अपना टेक्स्ट लिखें..."
-      oninput="countText()"></textarea>
-    <p id="textResult">शब्द: 0 | अक्षर: 0</p>
-    <button onclick="clearText()">टेक्स्ट मिटाएँ</button>
-  </section>
-
-  <section class="tool" id="about">
-    <h2>हमारे बारे में</h2>
-    <p>Smart Tools India एक मुफ्त ऑनलाइन टूल वेबसाइट है।
-      हमारा उद्देश्य रोजमर्रा के कामों को आसान बनाना है।</p>
-    <p><a href="mailto:contact@example.com">संपर्क करें</a></p>
-    <p>नोट: प्रकाशित करने से पहले संपर्क ईमेल को अपने वास्तविक ईमेल से बदलें।</p>
+  <section class="panel" id="about">
+    <h2 data-i18n="aboutTitle">Smart Tools India के बारे में</h2>
+    <p data-i18n="aboutText">यह वेबसाइट उपयोगी मुफ्त ऑनलाइन टूल्स उपलब्ध कराने के लिए बनाई गई है। गणना के परिणामों को महत्वपूर्ण वित्तीय या स्वास्थ्य निर्णयों से पहले जाँचें।</p>
+    <p class="note" data-i18n="privacyNote">टूल्स आपके ब्राउज़र में काम करते हैं। इस पेज पर दर्ज जानकारी किसी सर्वर पर भेजने की सुविधा नहीं है।</p>
   </section>
 </main>
-
 <footer>
-  <p>© <span id="year"></span> Smart Tools India</p>
-  <p>सभी अधिकार सुरक्षित।</p>
+  <p><strong>Smart Tools India</strong> © <span id="year"></span></p>
+  <p data-i18n="footerText">आपके रोज़मर्रा के काम आसान बनाने के लिए।</p>
+  <div class="footer-links"><a href="#about" data-i18n="aboutTitle">हमारे बारे में</a><a href="mailto:your-email@example.com" data-i18n="contact">संपर्क करें</a></div>
+  <p class="note" data-i18n="emailNote">प्रकाशित करने से पहले contact email को अपने ईमेल से बदलें।</p>
 </footer>
 
 <script>
-  function calculate(operator) {
-    const a = Number(document.getElementById('num1').value);
-    const b = Number(document.getElementById('num2').value);
-    if (document.getElementById('num1').value === '' ||
-        document.getElementById('num2').value === '') {
-      document.getElementById('calcResult').textContent =
-        'कृपया दोनों संख्याएँ भरें।';
-      return;
-    }
-    if (operator === '/' && b === 0) {
-      document.getElementById('calcResult').textContent =
-        'शून्य से भाग नहीं किया जा सकता।';
-      return;
-    }
-    let answer;
-    if (operator === '+') answer = a + b;
-    if (operator === '-') answer = a - b;
-    if (operator === '*') answer = a * b;
-    if (operator === '/') answer = a / b;
-    document.getElementById('calcResult').textContent = 'उत्तर: ' + answer;
-  }
-
-  function percentage() {
-    const p = document.getElementById('part').value;
-    const t = Number(document.getElementById('total').value);
-    const result = document.getElementById('percentResult');
-    if (p === '' || document.getElementById('total').value === '' || t <= 0) {
-      result.textContent = 'कृपया सही अंक और कुल अंक भरें।';
-      return;
-    }
-    result.textContent = 'प्रतिशत: ' + (Number(p) / t * 100).toFixed(2) + '%';
-  }
-
-  function countText() {
-    const text = document.getElementById('textInput').value;
-    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-    document.getElementById('textResult').textContent =
-      'शब्द: ' + words + ' | अक्षर: ' + text.length;
-  }
-
-  function clearText() {
-    document.getElementById('textInput').value = '';
-    countText();
-  }
-
-  document.getElementById('year').textContent = new Date().getFullYear();
+const translations = {
+hi:{
+heroTitle:"सभी उपयोगी टूल्स, एक ही जगह",heroSub:"मुफ्त ऑनलाइन कैलकुलेटर, टेक्स्ट टूल्स और स्टडी टूल्स इस्तेमाल करें।",searchPlaceholder:"टूल खोजें...",allTools:"सभी टूल्स",noResults:"कोई टूल नहीं मिला। दूसरा शब्द खोजें।",backHome:"← होम पर जाएँ",aboutTitle:"Smart Tools India के बारे में",aboutText:"यह वेबसाइट उपयोगी मुफ्त ऑनलाइन टूल्स उपलब्ध कराने के लिए बनाई गई है। गणना के परिणामों को महत्वपूर्ण वित्तीय या स्वास्थ्य निर्णयों से पहले जाँचें।",privacyNote:"टूल्स आपके ब्राउज़र में काम करते हैं। इस पेज पर दर्ज जानकारी किसी सर्वर पर भेजने की सुविधा नहीं है।",footerText:"आपके रोज़मर्रा के काम आसान बनाने के लिए।",contact:"संपर्क करें",emailNote:"प्रकाशित करने से पहले contact email को अपने ईमेल से बदलें।",tools:"टूल्स",enter:"मान दर्ज करें",calculate:"गणना करें",clear:"मिटाएँ",copy:"कॉपी करें",download:"डाउनलोड करें",result:"परिणाम",invalid:"कृपया सही मान भरें।",first:"पहली संख्या",second:"दूसरी संख्या",obtained:"प्राप्त अंक / संख्या",total:"कुल अंक / संख्या",birth:"जन्म तिथि",weight:"वजन (किलोग्राम)",height:"लंबाई (सेंटीमीटर)",price:"मूल कीमत (₹)",rate:"दर (%)",principal:"लोन राशि (₹)",months:"अवधि (महीने)",fromUnit:"से",toUnit:"में",textPlaceholder:"यहाँ अपना टेक्स्ट लिखें...",words:"शब्द",chars:"अक्षर",sentences:"वाक्य",copyDone:"कॉपी करने के लिए टेक्स्ट चुना गया है; अगर कॉपी न हो तो मैन्युअल कॉपी करें।",years:"वर्ष",monthsWord:"महीने",days:"दिन",age:"उम्र",bmi:"BMI",gst:"GST",totalPrice:"कुल कीमत",tip:"नोट: परिणाम सामान्य जानकारी के लिए हैं।",typeHere:"यहाँ लिखें...",start:"टेस्ट शुरू करें",stop:"टेस्ट रोकें",timeLeft:"बाकी समय",wpm:"शब्द प्रति मिनट",accuracy:"सटीकता",subject:"विषय",marks:"अंक",addSubject:"विषय जोड़ें",subjectName:"विषय का नाम",maxMarks:"पूर्णांक",randomMin:"न्यूनतम संख्या",randomMax:"अधिकतम संख्या",generate:"बनाएँ",length:"पासवर्ड की लंबाई",uppercase:"बड़े अक्षर",numbers:"संख्याएँ",symbols:"विशेष चिन्ह",include:"शामिल करें",textInput:"टेक्स्ट",convert:"बदलें",uppercaseLabel:"UPPERCASE",lowercaseLabel:"lowercase",titlecaseLabel:"Title Case",scientific:"साइंटिफिक कैलकुलेटर",basic:"सामान्य कैलकुलेटर",percentage:"प्रतिशत कैलकुलेटर",ageCalc:"उम्र कैलकुलेटर",bmiCalc:"BMI कैलकुलेटर",gstCalc:"GST कैलकुलेटर",emiCalc:"EMI कैलकुलेटर",unitCalc:"यूनिट कन्वर्टर",notes:"टेक्स्ट नोट्स",wordCounter:"वर्ड काउंटर",caseConverter:"केस कन्वर्टर",typingTest:"टाइपिंग टेस्ट",marksCalc:"स्टूडेंट मार्क्स कैलकुलेटर",randomNum:"रैंडम नंबर",passwordGen:"पासवर्ड जनरेटर",basicDesc:"जोड़, घटाव, गुणा और भाग",scientificDesc:"घात, वर्गमूल और त्रिकोणमिति",percentageDesc:"प्रतिशत और अंक निकालें",ageDesc:"जन्मतिथि से उम्र निकालें",bmiDesc:"वजन और लंबाई से BMI",gstDesc:"GST और कुल कीमत",emiDesc:"मासिक लोन किस्त",unitDesc:"लंबाई, वजन और तापमान",notesDesc:"लिखें, कॉपी करें और डाउनलोड करें",wordDesc:"शब्द, अक्षर और वाक्य गिनें",caseDesc:"अक्षरों का केस बदलें",typingDesc:"अपनी टाइपिंग स्पीड जाँचें",marksDesc:"विषयवार अंक और प्रतिशत",randomDesc:"रैंडम संख्या बनाएँ",passwordDesc:"यादृच्छिक पासवर्ड बनाएँ",divideZero:"शून्य से भाग नहीं कर सकते।",chooseDate:"जन्म तिथि चुनें।",futureDate:"जन्म तिथि भविष्य की नहीं हो सकती।",select:"चुनें",addGst:"GST जोड़ें",removeGst:"कीमत से GST निकालें",tax:"GST राशि",totalMarks:"कुल प्राप्त अंक",percentageLabel:"प्रतिशत",average:"औसत",weakPassword:"पासवर्ड बनाने में असमर्थ।",startDate:"शुरू करने के लिए बटन दबाएँ।",sampleText:"The quick brown fox jumps over the lazy dog. Practice makes progress.",ready:"तैयार",seconds:"सेकंड",copied:"कॉपी किया गया (यदि ब्राउज़र अनुमति दे)।",downloaded:"फाइल डाउनलोड हो गई।",noSubjects:"कम से कम एक विषय जोड़ें।"
+},
+en:{
+heroTitle:"Useful tools, all in one place",heroSub:"Free online calculators, text tools and study tools.",searchPlaceholder:"Search tools...",allTools:"All tools",noResults:"No tools found. Try another search.",backHome:"← Back to Home",aboutTitle:"About Smart Tools India",aboutText:"This website provides useful free online tools. Check results before making important financial or health decisions.",privacyNote:"Tools run in your browser. This page does not send entered information to a server.",footerText:"Making everyday tasks easier.",contact:"Contact",emailNote:"Replace the contact email with your own before publishing.",tools:"Tools",enter:"Enter a value",calculate:"Calculate",clear:"Clear",copy:"Copy",download:"Download",result:"Result",invalid:"Please enter valid values.",first:"First number",second:"Second number",obtained:"Obtained marks / number",total:"Total marks / number",birth:"Date of birth",weight:"Weight (kg)",height:"Height (cm)",price:"Base price (₹)",rate:"Rate (%)",principal:"Loan amount (₹)",months:"Duration (months)",fromUnit:"From",toUnit:"To",textPlaceholder:"Type your text here...",words:"Words",chars:"Characters",sentences:"Sentences",copyDone:"Text selected; copy manually if clipboard access is unavailable.",years:"years",monthsWord:"months",days:"days",age:"Age",bmi:"BMI",gst:"GST",totalPrice:"Total price",tip:"Note: Results are for general information.",typeHere:"Type here...",start:"Start test",stop:"Stop test",timeLeft:"Time left",wpm:"Words per minute",accuracy:"Accuracy",subject:"Subject",marks:"Marks",addSubject:"Add subject",subjectName:"Subject name",maxMarks:"Maximum marks",randomMin:"Minimum number",randomMax:"Maximum number",generate:"Generate",length:"Password length",uppercase:"Uppercase letters",numbers:"Numbers",symbols:"Symbols",include:"Include",textInput:"Text",convert:"Convert",uppercaseLabel:"UPPERCASE",lowercaseLabel:"lowercase",titlecaseLabel:"Title Case",scientific:"Scientific Calculator",basic:"Basic Calculator",percentage:"Percentage Calculator",ageCalc:"Age Calculator",bmiCalc:"BMI Calculator",gstCalc:"GST Calculator",emiCalc:"EMI Calculator",unitCalc:"Unit Converter",notes:"Text Notes",wordCounter:"Word Counter",caseConverter:"Case Converter",typingTest:"Typing Test",marksCalc:"Student Marks Calculator",randomNum:"Random Number",passwordGen:"Password Generator",basicDesc:"Add, subtract, multiply and divide",scientificDesc:"Powers, roots and trigonometry",percentageDesc:"Calculate percentages and marks",ageDesc:"Calculate age from date of birth",bmiDesc:"BMI from weight and height",gstDesc:"GST and total price",emiDesc:"Monthly loan payment",unitDesc:"Length, weight and temperature",notesDesc:"Write, copy and download text",wordDesc:"Count words, characters and sentences",caseDesc:"Change text case",typingDesc:"Test your typing speed",marksDesc:"Subject-wise marks and percentage",randomDesc:"Generate a random number",passwordDesc:"Generate a random password",divideZero:"Cannot divide by zero.",chooseDate:"Please choose a birth date.",futureDate:"Birth date cannot be in the future.",select:"Select",addGst:"Add GST",removeGst:"Remove GST from price",tax:"GST amount",totalMarks:"Total marks obtained",percentageLabel:"Percentage",average:"Average",weakPassword:"Could not generate a password.",startDate:"Press the button to begin.",sampleText:"The quick brown fox jumps over the lazy dog. Practice makes progress.",ready:"Ready",seconds:"seconds",copied:"Copied if browser permission allows.",downloaded:"File downloaded.",noSubjects:"Add at least one subject."
+},
+bn:{heroTitle:"সব দরকারি টুল, এক জায়গায়",heroSub:"বিনামূল্যে অনলাইন ক্যালকুলেটর ও টেক্সট টুল ব্যবহার করুন।",searchPlaceholder:"টুল খুঁজুন...",allTools:"সব টুল",noResults:"কোনো টুল পাওয়া যায়নি।",backHome:"← হোমে ফিরুন",aboutTitle:"আমাদের সম্পর্কে",aboutText:"এই ওয়েবসাইটে বিনামূল্যে দরকারি অনলাইন টুল দেওয়া হয়।",privacyNote:"টুলগুলো আপনার ব্রাউজারেই চলে।",footerText:"দৈনন্দিন কাজ সহজ করতে।",contact:"যোগাযোগ",emailNote:"প্রকাশের আগে ইমেইল ঠিকানা বদলান."},
+ur:{heroTitle:"تمام مفید ٹولز ایک جگہ",heroSub:"مفت آن لائن کیلکولیٹر اور ٹیکسٹ ٹولز استعمال کریں۔",searchPlaceholder:"ٹول تلاش کریں...",allTools:"تمام ٹولز",noResults:"کوئی ٹول نہیں ملا۔",backHome:"← ہوم پر واپس",aboutTitle:"ہمارے بارے میں",aboutText:"یہ ویب سائٹ مفت آن لائن ٹولز فراہم کرتی ہے۔",privacyNote:"ٹولز آپ کے براؤزر میں چلتے ہیں۔",footerText:"روزمرہ کام آسان بنانے کے لیے۔",contact:"رابطہ",emailNote:"اشاعت سے پہلے ای میل تبدیل کریں۔"},
+ne:{heroTitle:"सबै उपयोगी टुलहरू एउटै ठाउँमा",heroSub:"निःशुल्क अनलाइन क्यालकुलेटर र टेक्स्ट टुल प्रयोग गर्नुहोस्।",searchPlaceholder:"टुल खोज्नुहोस्...",allTools:"सबै टुलहरू",noResults:"कुनै टुल भेटिएन।",backHome:"← गृहपृष्ठमा फर्कनुहोस्",aboutTitle:"हाम्रो बारेमा",aboutText:"यो वेबसाइट निःशुल्क उपयोगी अनलाइन टुलहरूका लागि हो।",privacyNote:"टुलहरू तपाईंको ब्राउजरमा चल्छन्।",footerText:"दैनिक काम सजिलो बनाउन।",contact:"सम्पर्क",emailNote:"प्रकाशनअघि इमेल बदल्नुहोस्।"},
+es:{heroTitle:"Herramientas útiles en un solo lugar",heroSub:"Calculadoras y herramientas de texto gratuitas.",searchPlaceholder:"Buscar herramientas...",allTools:"Todas las herramientas",noResults:"No se encontraron herramientas.",backHome:"← Volver al inicio",aboutTitle:"Sobre nosotros",aboutText:"Este sitio ofrece herramientas gratuitas útiles.",privacyNote:"Las herramientas funcionan en tu navegador.",footerText:"Facilitando las tareas diarias.",contact:"Contacto",emailNote:"Cambia el correo antes de publicar."},
+fr:{heroTitle:"Des outils utiles au même endroit",heroSub:"Calculatrices et outils de texte gratuits.",searchPlaceholder:"Rechercher un outil...",allTools:"Tous les outils",noResults:"Aucun outil trouvé.",backHome:"← Accueil",aboutTitle:"À propos",aboutText:"Ce site propose des outils en ligne gratuits.",privacyNote:"Les outils fonctionnent dans votre navigateur.",footerText:"Pour simplifier le quotidien.",contact:"Contact",emailNote:"Modifiez l’adresse e-mail avant publication."},
+ar:{heroTitle:"أدوات مفيدة في مكان واحد",heroSub:"حاسبات وأدوات نصية مجانية عبر الإنترنت.",searchPlaceholder:"ابحث عن الأدوات...",allTools:"كل الأدوات",noResults:"لم يتم العثور على أدوات.",backHome:"← العودة للرئيسية",aboutTitle:"معلومات عنا",aboutText:"يوفر هذا الموقع أدوات مجانية مفيدة.",privacyNote:"تعمل الأدوات داخل متصفحك.",footerText:"لتسهيل المهام اليومية.",contact:"اتصل بنا",emailNote:"غيّر البريد الإلكتروني قبل النشر."},
+pt:{heroTitle:"Ferramentas úteis em um só lugar",heroSub:"Calculadoras e ferramentas de texto gratuitas.",searchPlaceholder:"Pesquisar ferramentas...",allTools:"Todas as ferramentas",noResults:"Nenhuma ferramenta encontrada.",backHome:"← Voltar ao início",aboutTitle:"Sobre nós",aboutText:"Este site oferece ferramentas online gratuitas.",privacyNote:"As ferramentas funcionam no seu navegador.",footerText:"Facilitando tarefas do dia a dia.",contact:"Contato",emailNote:"Altere o e-mail antes de publicar."},
+id:{heroTitle:"Alat berguna dalam satu tempat",heroSub:"Kalkulator dan alat teks online gratis.",searchPlaceholder:"Cari alat...",allTools:"Semua alat",noResults:"Alat tidak ditemukan.",backHome:"← Kembali ke Beranda",aboutTitle:"Tentang Kami",aboutText:"Situs ini menyediakan alat online gratis.",privacyNote:"Alat berjalan di browser Anda.",footerText:"Mempermudah pekerjaan sehari-hari.",contact:"Kontak",emailNote:"Ganti email sebelum dipublikasikan."}
+};
+const tools=[
+{id:"basic",icon:"🧮",name:"basic",desc:"basicDesc"},{id:"scientific",icon:"📐",name:"scientific",desc:"scientificDesc"},
+{id:"percentage",icon:"📊",name:"percentage",desc:"percentageDesc"},{id:"age",icon:"🎂",name:"ageCalc",desc:"ageDesc"},
+{id:"bmi",icon:"⚖️",name:"bmiCalc",desc:"bmiDesc"},{id:"gst",icon:"🧾",name:"gstCalc",desc:"gstDesc"},
+{id:"emi",icon:"🏦",name:"emiCalc",desc:"emiDesc"},{id:"unit",icon:"📏",name:"unitCalc",desc:"unitDesc"},
+{id:"notes",icon:"📝",name:"notes",desc:"notesDesc"},{id:"words",icon:"🔢",name:"wordCounter",desc:"wordDesc"},
+{id:"case",icon:"🔠",name:"caseConverter",desc:"caseDesc"},{id:"typing",icon:"⌨️",name:"typingTest",desc:"typingDesc"},
+{id:"marks",icon:"🎓",name:"marksCalc",desc:"marksDesc"},{id:"random",icon:"🎲",name:"randomNum",desc:"randomDesc"},
+{id:"password",icon:"🔐",name:"passwordGen",desc:"passwordDesc"}
+];
+let lang="hi",typingTimer=null,typingStarted=0,typingDuration=60;
+const $=id=>document.getElementById(id);
+function t(key){return (translations[lang]&&translations[lang][key])||translations.en[key]||translations.hi[key]||key}
+function setLang(newLang){lang=newLang;document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"||lang==="ur"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));const s=$("search");s.placeholder=t("searchPlaceholder");renderTools();const current=$("toolView").dataset.current;if(current)openTool(current);if($("textInput"))updateTextStats()}
+$("language").addEventListener("change",e=>setLang(e.target.value));
+function renderTools(){const q=$("search").value.trim().toLowerCase();const filtered=tools.filter(x=>(t(x.name)+" "+t(x.desc)+" "+x.id).toLowerCase().includes(q));$("toolGrid").innerHTML=filtered.map(x=>`<button class="tool-card" data-tool="${x.id}"><span class="tool-icon">${x.icon}</span><span class="tool-name">${t(x.name)}</span><span class="tool-desc">${t(x.desc)}</span></button>`).join("");$("toolCount").textContent=filtered.length+" "+t("tools");$("noResults").classList.toggle("hidden",filtered.length!==0);document.querySelectorAll("[data-tool]").forEach(b=>b.addEventListener("click",()=>openTool(b.dataset.tool)))}
+$("search").addEventListener("input",renderTools);
+$("backBtn").addEventListener("click",showHome);
+function showHome(){if(typingTimer){clearInterval(typingTimer);typingTimer=null}$("toolView").classList.add("hidden");$("home").classList.remove("hidden");$("about").classList.remove("hidden");$("toolView").dataset.current="";window.scrollTo({top:0,behavior:"smooth"})}
+function openTool(id){if(typingTimer){clearInterval(typingTimer);typingTimer=null}const item=tools.find(x=>x.id===id);if(!item)return;$("home").classList.add("hidden");$("about").classList.add("hidden");$("toolView").classList.remove("hidden");$("toolView").dataset.current=id;$("toolTitle").textContent=item.icon+" "+t(item.name);$("toolSubtitle").textContent=t(item.desc);$("toolContent").innerHTML=toolMarkup(id);wireTool(id);window.scrollTo({top:0,behavior:"smooth"})}
+function field(id,label,type="number",placeholder="",extra=""){return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}" ${extra}></div>`}
+function result(id="result"){return `<div class="result" id="${id}" aria-live="polite"></div>`}
+function btn(label,fn,cls=""){return `<button class="btn ${cls}" id="${fn}">${label}</button>`}
+function toolMarkup(id){switch(id){
+case"basic":return `<div class="calculator-display" id="calcDisplay" aria-live="polite">0</div><div class="calc-grid">${["7","8","9","÷","4","5","6","×","1","2","3","−","0",".","(",")","+","-","*","/","√","%","C","="].map(v=>`<button class="${v==="="? "equals":v==="C"?"clear":""}" data-key="${v}">${v}</button>`).join("")}</div>${result()}`;
+case"scientific":return `<div class="fields">${field("sciExpr",t("enter")+" (e.g. sin(30), sqrt(25), 2^3)","text","sin(30)")}</div><p class="note">Supported: + − × ÷, parentheses, sqrt(x), sin(x), cos(x), tan(x), log(x), ln(x), x^y. Trigonometry uses degrees.</p>${btn(t("calculate"),"sciGo")}${result()}`;
+case"percentage":return `<div class="fields">${field("part",t("obtained"))}${field("total",t("total"))}</div>${btn(t("calculate"),"percentGo")}${result()}`;
+case"age":return `<div class="fields">${field("birth",t("birth"),"date")}</div>${btn(t("calculate"),"ageGo")}${result()}`;
+case"bmi":return `<div class="fields">${field("weight",t("weight"))}${field("height",t("height"))}</div>${btn(t("calculate"),"bmiGo")}${result()}<p class="note">${t("tip")}</p>`;
+case"gst":return `<div class="fields">${field("price",t("price"))}<div class="field"><label for="gstRate">${t("rate")}</label><select id="gstRate"><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select></div><div class="field"><label for="gstMode">${t("select")}</label><select id="gstMode"><option value="add">${t("addGst")}</option><option value="remove">${t("removeGst")}</option></select></div></div>${btn(t("calculate"),"gstGo")}${result()}`;
+case"emi":return `<div class="fields">${field("principal",t("principal"))}${field("rate",t("rate"))}${field("months",t("months"))}</div>${btn(t("calculate"),"emiGo")}${result()}`;
+case"unit":return `<div class="fields"><div class="field"><label for="unitType">${t("select")}</label><select id="unitType"><option value="length">Length</option><option value="weight">Weight</option><option value="temp">Temperature</option></select></div>${field("unitValue",t("enter"))}<div class="field"><label for="unitFrom">${t("fromUnit")}</label><select id="unitFrom"></select></div><div class="field"><label for="unitTo">${t("toUnit")}</label><select id="unitTo"></select></div></div>${btn(t("convert"),"unitGo")}${result()}`;
+case"notes":return `<div class="field"><label for="notesText">${t("textPlaceholder")}</label><textarea id="notesText" rows="9" placeholder="${t("textPlaceholder")}"></textarea></div><div class="actions">${btn(t("copy"),"notesCopy","secondary")}${btn(t("download"),"notesDownload")}${btn(t("clear"),"notesClear","danger")}</div>${result("notesResult")}`;
+case"words":return `<div class="field"><label for="wordText">${t("textPlaceholder")}</label><textarea id="wordText" rows="7" placeholder="${t("textPlaceholder")}"></textarea></div><div class="result" id="wordStats"></div>`;
+case"case":return `<div class="field"><label for="caseText">${t("textInput")}</label><textarea id="caseText" rows="7" placeholder="${t("textPlaceholder")}"></textarea></div><div class="actions">${btn(t("uppercaseLabel"),"caseUpper","secondary")}${btn(t("lowercaseLabel"),"caseLower","secondary")}${btn(t("titlecaseLabel"),"caseTitle","secondary")}${btn(t("copy"),"caseCopy")}</div>${result()}`;
+case"typing":return `<p id="typingSample" class="panel">${t("sampleText")} ${t("sampleText")}</p><p class="muted">${t("startDate")} <span id="typingClock"></span></p><div class="field"><label for="typingInput">${t("typeHere")}</label><textarea id="typingInput" rows="5" placeholder="${t("typeHere")}" disabled></textarea></div><div class="actions">${btn(t("start"),"typingStart")}${btn(t("stop"),"typingStop","secondary")}</div>${result("typingResult")}`;
+case"marks":return `<div id="subjects"></div><div class="actions">${btn(t("addSubject"),"addSubject","secondary")}${btn(t("calculate"),"marksGo")}</div>${result()}`;
+case"random":return `<div class="fields">${field("randomMin",t("randomMin"))}${field("randomMax",t("randomMax"))}</div>${btn(t("generate"),"randomGo")}${result()}`;
+case"password":return `<div class="fields">${field("passLength",t("length"))}</div><div class="fields"><label><input id="passUpper" type="checkbox" checked> ${t("uppercase")}</label><label><input id="passNumbers" type="checkbox" checked> ${t("numbers")}</label><label><input id="passSymbols" type="checkbox"> ${t("symbols")}</label></div><div class="actions">${btn(t("generate"),"passGo")}${btn(t("copy"),"passCopy","secondary")}</div>${result()}`;
+default:return `<p>${t("invalid")}</p>`}}
+function wireTool(id){
+if(id==="basic"){let expr="";const display=$("calcDisplay");document.querySelectorAll("[data-key]").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.key;if(k==="C")expr="";else if(k==="="){try{const safe=expr.replace(/×/g,"*").replace(/÷/g,"/").replace(/−/g,"-");if(!/^[0-9+\-*/().%\s]+$/.test(safe))throw 0;const value=Function('"use strict";return ('+safe.replace(/(\d+(?:\.\d+)?)%/g,"($1/100)")+')')();if(!Number.isFinite(value))throw 0;expr=String(value)}catch{expr="" ;$("result").textContent=t("invalid")}}else if(k==="√"){try{expr=String(Math.sqrt(Number(expr)))}catch{expr=""}}else expr+=k;display.textContent=expr||"0"}));}
+if(id==="scientific")$("sciGo").onclick=()=>{try{let s=$("sciExpr").value.toLowerCase().replace(/\s/g,"");s=s.replace(/\^/g,"**").replace(/\bsqrt\(/g,"Math.sqrt(").replace(/\bsin\(/g,"Math.sin(Math.PI/180*").replace(/\bcos\(/g,"Math.cos(Math.PI/180*").replace(/\btan\(/g,"Math.tan(Math.PI/180*").replace(/\blog\(/g,"Math.log10(").replace(/\bln\(/g,"Math.log(");if(!/^[0-9+\-*/().,MathsqrtincosatgloPIe]+$/.test(s))throw 0;const v=Function('"use strict";return ('+s+')')();if(!Number.isFinite(v))throw 0;$("result").textContent=t("result")+": "+v}catch{$("result").textContent=t("invalid")}};
+if(id==="percentage")$("percentGo").onclick=()=>{const p=$("part").value,total=$("total").value;if(p===""||total===""||Number(total)<=0){$("result").textContent=t("invalid");return}$("result").textContent=t("percentageLabel")+": "+(Number(p)/Number(total)*100).toFixed(2)+"%";};
+if(id==="age")$("ageGo").onclick=()=>{const v=$("birth").value;if(!v){$("result").textContent=t("chooseDate");return}const b=new Date(v+"T00:00:00"),now=new Date();if(b>now){$("result").textContent=t("futureDate");return}let y=now.getFullYear()-b.getFullYear(),m=now.getMonth()-b.getMonth(),d=now.getDate()-b.getDate();if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}if(m<0){y--;m+=12}$("result").textContent=`${t("age")}: ${y} ${t("years")}, ${m} ${t("monthsWord")}, ${d} ${t("days")}`};
+if(id==="bmi")$("bmiGo").onclick=()=>{const w=+$("weight").value,h=+$("height").value/100;if(w<=0||h<=0){$("result").textContent=t("invalid");return}const n=w/(h*h);const cat=n<18.5?"Underweight":n<25?"Normal range":n<30?"Overweight":"Obesity range";$("result").textContent=`BMI: ${n.toFixed(1)} — ${cat}. ${t("tip")}`};
+if(id==="gst")$("gstGo").onclick=()=>{const p=$("price").value;if(p===""||+p<0){$("result").textContent=t("invalid");return}const n=+p,r=+$("gstRate").value,remove=$("gstMode").value==="remove";const base=remove?n/(1+r/100):n,tax=remove?n-base:n*r/100,total=remove?n:n+tax;$("result").textContent=`${t("tax")}: ₹${tax.toFixed(2)} | ${t("totalPrice")}: ₹${total.toFixed(2)}`};
+if(id==="emi")$("emiGo").onclick=()=>{const p=+$("principal").value,r=+$("rate").value/1200,n=+$("months").value;if(p<=0||r<0||n<=0||!Number.isFinite(n)){ $("result").textContent=t("invalid");return}const emi=r===0?p/n:p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);$("result").textContent=`EMI: ₹${emi.toFixed(2)} | Total: ₹${(emi*n).toFixed(2)} | Interest: ₹${(emi*n-p).toFixed(2)}`};
+if(id==="unit"){const units={length:[["meter","m",1],["kilometer","km",1000],["centimeter","cm",.01],["mile","mi",1609.344],["foot","ft",.3048],["inch","in",.0254]],weight:[["kilogram","kg",1],["gram","g",.001],["pound","lb",.45359237],["ounce","oz",.0283495]],temp:[["Celsius","°C"],["Fahrenheit","°F"],["Kelvin","K"]]};function fill(){const list=units[$("unitType").value];$("unitFrom").innerHTML=list.map(x=>`<option value="${x[0]}">${x[0]} (${x[1]})</option>`).join("");$("unitTo").innerHTML=$("unitFrom").innerHTML;$("unitTo").selectedIndex=Math.min(1,list.length-1)}$("unitType").onchange=fill;fill();$("unitGo").onclick=()=>{const n=+$("unitValue").value;if($("unitValue").value===""){ $("result").textContent=t("invalid");return}const type=$("unitType").value,a=$("unitFrom").value,b=$("unitTo").value;let out;if(type==="temp"){let c=a==="Celsius"?n:a==="Fahrenheit"?(n-32)*5/9:n-273.15;out=b==="Celsius"?c:b==="Fahrenheit"?c*9/5+32:c+273.15}else{const list=units[type],fa=list.find(x=>x[0]===a)[2],fb=list.find(x=>x[0]===b)[2];out=n*fa/fb}$("result").textContent=`${n} ${a} = ${out.toFixed(6).replace(/\.?0+$/,"")} ${b}`}}
+if(id==="notes"){$("notesCopy").onclick=()=>copyText($("notesText").value);$("notesDownload").onclick=()=>downloadText($("notesText").value,"smart-tools-notes.txt");$("notesClear").onclick=()=>{$("notesText").value="";$("notesResult").textContent=""}}
+if(id==="words")$("wordText").addEventListener("input",updateTextStats);
+if(id==="case"){$("caseUpper").onclick=()=>$("caseText").value=$("caseText").value.toUpperCase();$("caseLower").onclick=()=>$("caseText").value=$("caseText").value.toLowerCase();$("caseTitle").onclick=()=>$("caseText").value=$("caseText").value.toLowerCase().replace(/\b\p{L}/gu,c=>c.toUpperCase());$("caseCopy").onclick=()=>copyText($("caseText").value)}
+if(id==="typing"){ $("typingInput").value="";$("typingStart").onclick=()=>{clearInterval(typingTimer);typingDuration=60;typingStarted=Date.now();$("typingInput").disabled=false;$("typingInput").value="";$("typingInput").focus();$("typingClock").textContent="60";$("typingResult").textContent="";typingTimer=setInterval(()=>{const left=Math.max(0,60-Math.floor((Date.now()-typingStarted)/1000));$("typingClock").textContent=left+" "+t("seconds");if(left<=0)finishTyping()},250);$("typingInput").oninput=()=>{if($("typingInput").value.length>0&&!typingStarted)typingStarted=Date.now()}};$("typingStop").onclick=finishTyping}
+if(id==="marks"){let count=0;function add(){count++;const d=document.createElement("div");d.className="fields";d.style.marginBottom="10px";d.innerHTML=`<div class="field"><label>${t("subjectName")}</label><input class="subName" placeholder="${t("subject")} ${count}"></div><div class="field"><label>${t("marks")}</label><input class="subMarks" type="number" min="0" step="any"></div><div class="field"><label>${t("maxMarks")}</label><input class="subMax" type="number" min="0" step="any" value="100"></div>`;$("subjects").appendChild(d)}$("addSubject").onclick=add;$("marksGo").onclick=()=>{const ms=[...document.querySelectorAll(".subMarks")],mx=[...document.querySelectorAll(".subMax")];if(!ms.length){$("result").textContent=t("noSubjects");return}let got=0,max=0;for(let i=0;i<ms.length;i++){if(ms[i].value===""||+mx[i].value<=0||+ms[i].value<0||+ms[i].value>+mx[i].value){$("result").textContent=t("invalid");return}got+=+ms[i].value;max+=+mx[i].value}$("result").textContent=`${t("totalMarks")}: ${got}/${max} | ${t("percentageLabel")}: ${(got/max*100).toFixed(2)}% | ${t("average")}: ${(got/ms.length).toFixed(2)}`};add()}
+if(id==="random")$("randomGo").onclick=()=>{const a=$("randomMin").value,b=$("randomMax").value;if(a===""||b===""||+b<+a){$("result").textContent=t("invalid");return}$("result").textContent=String(Math.floor(Math.random()*(+b-+a+1)) + +a)};
+if(id==="password"){let generated="";$("passGo").onclick=()=>{let chars="abcdefghijklmnopqrstuvwxyz";if($("passUpper").checked)chars+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";if($("passNumbers").checked)chars+="0123456789";if($("passSymbols").checked)chars+="!@#$%^&*()-_=+[]{}";const len=Math.max(4,Math.min(128,parseInt($("passLength").value,10)||16));if(chars.length===0){$("result").textContent=t("weakPassword");return}const bytes=new Uint32Array(len);if(window.crypto&&crypto.getRandomValues)crypto.getRandomValues(bytes);else for(let i=0;i<len;i++)bytes[i]=Math.floor(Math.random()*4294967296);generated=Array.from(bytes,n=>chars[n%chars.length]).join("");$("result").textContent=generated};$("passCopy").onclick=()=>copyText(generated)}
+}
+function updateTextStats(){const el=$("wordText");if(!el)return;const s=el.value;const words=s.trim()?s.trim().split(/\s+/u).length:0;const chars=[...s].length;const sentences=s.trim()?(s.match(/[.!?।]+/g)||[]).length:0;$("wordStats").textContent=`${t("words")}: ${words} | ${t("chars")}: ${chars} | ${t("sentences")}: ${sentences}`}
+function finishTyping(){if(typingTimer){clearInterval(typingTimer);typingTimer=null}const input=$("typingInput");if(!input)return;input.disabled=true;const elapsed=Math.max(1,(Date.now()-typingStarted)/60000);const typed=input.value.trim();const words=typed?typed.split(/\s+/u).length:0;const sample=$("typingSample").textContent;const expected=sample.slice(0,typed.length);let correct=0;for(let i=0;i<typed.length;i++)if(typed[i]===expected[i])correct++;$("typingResult").textContent=`${t("wpm")}: ${Math.round(words/elapsed)} | ${t("accuracy")}: ${typed.length?Math.round(correct/typed.length*100):0}%`;}
+async function copyText(text){if(!text){$("result")&&($("result").textContent=t("invalid"));return}try{await navigator.clipboard.writeText(text);const r=$("notesResult")||$("result");if(r)r.textContent=t("copied")}catch{const ta=document.createElement("textarea");ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand("copy")}catch{}ta.remove();const r=$("notesResult")||$("result");if(r)r.textContent=t("copyDone")}}
+function downloadText(text,name){const blob=new Blob([text],{type:"text/plain;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;a.click();URL.revokeObjectURL(url);const r=$("notesResult");if(r)r.textContent=t("downloaded")}
+$("year").textContent=new Date().getFullYear();setLang("hi");
 </script>
 </body>
 </html>
