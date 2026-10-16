@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ak2844994-lang.github.io/smart-tools-india/sitemap.xml
