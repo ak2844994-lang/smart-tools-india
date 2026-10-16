@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Tools India पर मुफ्त ऑनलाइन कैलकुलेटर, प्रतिशत कैलकुलेटर और टेक्स्ट टूल इस्तेमाल करें।">
+  <title>Smart Tools India - Free Online Tools</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f6fb;
+      color: #182235;
+    }
+    header {
+      background: #155eef;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 8px; }
+    nav {
+      background: #1048bd;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    main {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 14px;
+    }
+    .tool {
+      background: white;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px #0000000d;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0;
+      border: 1px solid #ccd4e0;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+    button {
+      background: #155eef;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover { background: #1048bd; }
+    .result { font-weight: bold; color: #087443; }
+    footer {
+      text-align: center;
+      background: #182235;
+      color: white;
+      padding: 22px;
+      margin-top: 35px;
+    }
+    footer a { color: white; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Smart Tools India</h1>
+  <p>आपके सभी जरूरी ऑनलाइन टूल्स — बिल्कुल मुफ्त!</p>
+</header>
+
+<nav>
+  <a href="#calculator">कैलकुलेटर</a>
+  <a href="#percentage">प्रतिशत</a>
+  <a href="#texttool">टेक्स्ट टूल</a>
+  <a href="#about">हमारे बारे में</a>
+</nav>
+
+<main>
+  <section class="tool" id="calculator">
+    <h2>🧮 सामान्य कैलकुलेटर</h2>
+    <input id="num1" type="number" placeholder="पहली संख्या">
+    <input id="num2" type="number" placeholder="दूसरी संख्या">
+    <button onclick="calculate('+')">जोड़ (+)</button>
+    <button onclick="calculate('-')">घटाव (−)</button>
+    <button onclick="calculate('*')">गुणा (×)</button>
+    <button onclick="calculate('/')">भाग (÷)</button>
+    <p class="result" id="calcResult">उत्तर यहाँ दिखाई देगा।</p>
+  </section>
+
+  <section class="tool" id="percentage">
+    <h2>📊 प्रतिशत कैलकुलेटर</h2>
+    <input id="part" type="number" placeholder="प्राप्त अंक">
+    <input id="total" type="number" placeholder="कुल अंक">
+    <button onclick="percentage()">प्रतिशत निकालें</button>
+    <p class="result" id="percentResult"></p>
+  </section>
+
+  <section class="tool" id="texttool">
+    <h2>📝 टेक्स्ट काउंटर</h2>
+    <textarea id="textInput" rows="5" placeholder="यहाँ अपना टेक्स्ट लिखें..."
+      oninput="countText()"></textarea>
+    <p id="textResult">शब्द: 0 | अक्षर: 0</p>
+    <button onclick="clearText()">टेक्स्ट मिटाएँ</button>
+  </section>
+
+  <section class="tool" id="about">
+    <h2>हमारे बारे में</h2>
+    <p>Smart Tools India एक मुफ्त ऑनलाइन टूल वेबसाइट है।
+      हमारा उद्देश्य रोजमर्रा के कामों को आसान बनाना है।</p>
+    <p><a href="mailto:contact@example.com">संपर्क करें</a></p>
+    <p>नोट: प्रकाशित करने से पहले संपर्क ईमेल को अपने वास्तविक ईमेल से बदलें।</p>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Smart Tools India</p>
+  <p>सभी अधिकार सुरक्षित।</p>
+</footer>
+
+<script>
+  function calculate(operator) {
+    const a = Number(document.getElementById('num1').value);
+    const b = Number(document.getElementById('num2').value);
+    if (document.getElementById('num1').value === '' ||
+        document.getElementById('num2').value === '') {
+      document.getElementById('calcResult').textContent =
+        'कृपया दोनों संख्याएँ भरें।';
+      return;
+    }
+    if (operator === '/' && b === 0) {
+      document.getElementById('calcResult').textContent =
+        'शून्य से भाग नहीं किया जा सकता।';
+      return;
+    }
+    let answer;
+    if (operator === '+') answer = a + b;
+    if (operator === '-') answer = a - b;
+    if (operator === '*') answer = a * b;
+    if (operator === '/') answer = a / b;
+    document.getElementById('calcResult').textContent = 'उत्तर: ' + answer;
+  }
+
+  function percentage() {
+    const p = document.getElementById('part').value;
+    const t = Number(document.getElementById('total').value);
+    const result = document.getElementById('percentResult');
+    if (p === '' || document.getElementById('total').value === '' || t <= 0) {
+      result.textContent = 'कृपया सही अंक और कुल अंक भरें।';
+      return;
+    }
+    result.textContent = 'प्रतिशत: ' + (Number(p) / t * 100).toFixed(2) + '%';
+  }
+
+  function countText() {
+    const text = document.getElementById('textInput').value;
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    document.getElementById('textResult').textContent =
+      'शब्द: ' + words + ' | अक्षर: ' + text.length;
+  }
+
+  function clearText() {
+    document.getElementById('textInput').value = '';
+    countText();
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
